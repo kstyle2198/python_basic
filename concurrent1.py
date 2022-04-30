@@ -1,6 +1,5 @@
 import time
 from concurrent import futures
-import asyncio
 
 
 def cumulative(num: int):
@@ -15,17 +14,16 @@ if __name__ == "__main__":
     targets = [300000000, 20000, 9000000, 400000, 300000]
     start = time.time()
 
-
-    # with futures.ThreadPoolExecutor() as executor:
-    #     results = [executor.submit(cumulative, num) for num in targets]
-    #     print(results)
-    #     for f in futures.as_completed(results):
-    #         print(f.result())
+    with futures.ThreadPoolExecutor() as executor:
+        results = [executor.submit(cumulative, num) for num in targets]
+        print(results)
+        for f in futures.as_completed(results):
+            print(f.result())
 
 ####################################
-    result = [cumulative(i) for i in targets]
-    print(result)
+    # result = [cumulative(i) for i in targets]
+    # print(result)
 ####################################
 
     end = time.time()
-    print(end-start)
+    print(f"실행 완료까지 걸린 시간 : {end-start:.2f}")
