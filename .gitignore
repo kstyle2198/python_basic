@@ -1,2 +1,8 @@
 secrets.json
 __pycache__
+images
+images1
+files
+.ipynb_checkpoints
+.mypy_cache
+.vscode

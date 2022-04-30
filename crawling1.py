@@ -2,9 +2,7 @@ import os
 import aiohttp
 import asyncio
 from config import get_secret
-import aiofiles
-
-# pip install aiofiles==0.7.0
+import aiofiles    # pip install aiofiles==0.7.0
 
 
 async def img_downloader(session, img):
