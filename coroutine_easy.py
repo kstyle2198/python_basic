@@ -10,6 +10,7 @@ async def cumulative(num: int):
     for i in range(num):
         result += i
     print(f"{str(num)} 실행이 완료되었습니다.")
+    print(result)
     return result
 
 
@@ -20,7 +21,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    targets = [300000000, 20000, 9000000, 400000, 300000]
+    targets = [300000000, 20000, 9000000, 50000000, 400000, 40000000]
     start = time.time()
 
     asyncio.run(main())
